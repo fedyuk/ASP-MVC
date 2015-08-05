@@ -1,0 +1,16 @@
+﻿<Window x:Class="MVVM_Example.Views.FileScanView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FileScanView" Height="300" Width="480">
+    <Grid>
+        <TextBox Text="{Binding Directory}" Height="23" HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Width="280" IsEnabled="False" Name="targetDirectory"/>
+        <Button Content="Scan" Height="23" HorizontalAlignment="Left" Margin="300,10,0,0" Name="btnStart" VerticalAlignment="Top" Width="75" Command="{Binding StartScan}"/>
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="380,10,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Command="{Binding CancelScan}"/>
+        <ListBox Name="listFiles" Margin="-2,-15,0,0" ItemsSource="{Binding DuplicateFiles}" Height="170" Width="440">
+        </ListBox>
+        <Grid Margin="0,225,0,0" Background="LightBlue">
+            <ProgressBar Height="20" MinHeight="20" Name="progressBar" Value="{Binding CurrentProgress, UpdateSourceTrigger=PropertyChanged}" Width="440" Visibility="{Binding ProgressVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Name="progressText" Text="{Binding ProgressText, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Window>

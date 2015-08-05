@@ -1,0 +1,17 @@
+D:\C#\projects\MVVM_Example\MVVM_Example\bin\Debug\MVVM_Example.exe.config
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\App.g.cs
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example_MarkupCompile.cache
+D:\C#\projects\MVVM_Example\MVVM_Example\bin\Debug\MVVM_Example.exe
+D:\C#\projects\MVVM_Example\MVVM_Example\bin\Debug\MVVM_Example.pdb
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example.g.resources
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example.Properties.Resources.resources
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example.csproj.GenerateResource.Cache
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example.exe
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example.pdb
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\Views\SelectPathWindow.baml
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\Views\SelectPathWindow.g.cs
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\Views\FileScanView.baml
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\Views\FileScanView.g.cs
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\MVVM_Example.csprojResolveAssemblyReference.cache
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\Views\DuplicateFilesView.baml
+D:\C#\projects\MVVM_Example\MVVM_Example\obj\Debug\Views\DuplicateFilesView.g.cs

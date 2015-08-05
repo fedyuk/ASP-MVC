@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM_Example", "MVVM_Example\MVVM_Example.csproj", "{52A8C849-0571-4B4E-9527-3FEDA95FE8A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52A8C849-0571-4B4E-9527-3FEDA95FE8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A8C849-0571-4B4E-9527-3FEDA95FE8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A8C849-0571-4B4E-9527-3FEDA95FE8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A8C849-0571-4B4E-9527-3FEDA95FE8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

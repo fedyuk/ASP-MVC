@@ -1,0 +1,58 @@
+﻿@model AspNetTutorial.Models.User
+
+@{
+    Layout = null;
+}
+@{
+    String UserName = (String)ViewData["UserName"];
+    String Password = (String)ViewData["Password"];
+    String ErrorMessage = (String)ViewData["ErrorMessage"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Login</title>
+
+     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+
+     <link href="~/Content/signin.css" rel="stylesheet">
+
+  
+
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "form-signin" }))
+      {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary(true)
+          <h2 class="form-signin-heading">Log in</h2>
+          
+                  @Html.LabelFor(a => a.Name,"Username", new { @class = "sr-only" })
+                  <input type="text" name="UserName" id="UserName" class="form-control" placeholder="Your name" required autofocus autocomplete="off" value=@UserName>
+                  @Html.LabelFor(a => a.Password,"Password", new { @class = "sr-only" })
+                  <input type="password" name="Password" id="Password" class="form-control" placeholder="Your password" required autocomplete="off" value=@Password>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                  if (!ErrorMessage.IsEmpty())
+                  {
+          	          <p class="alert alert-danger">@ErrorMessage</p>
+                  }
+                  <p align="right">Registration is @Html.ActionLink("here","Register","Login")</p>
+      }
+
+    </div> <!-- /container -->
+    <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
