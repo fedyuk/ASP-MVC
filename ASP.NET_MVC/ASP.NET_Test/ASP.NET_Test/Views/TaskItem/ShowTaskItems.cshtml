@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "ShowTaskItems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ASP.NET_Test.ViewModels.TaskTaskItemsViewModel
+		    <div class="row-fluid">
+			  <div class="span12">
+                <p class="col-md-offset-11 col-xs-offset-8">@Html.ActionLink("Add task item", "AddTaskItem", "TaskItem", new { taskId = Model.TaskId}, null)</p>
+                <div class="page-header">                  
+                  <h3>My task items:</h3>
+                </div>
+                <div class="list-group">
+                @foreach (var item in Model.TaskItems) 
+                {
+                  <div class="list-group-item row-md-offset-5">
+                    <h4 class="list-group-item-text">@item.TaskItemName</h4>
+                    <p class="list-group-item-heading">Check status: @item.Status</p>
+                    <div class="row">
+                      <div class="col-md-11">
+                        @Html.ActionLink("Delete", "DeleteTaskItem", "TaskItem", new { taskItemId = item.TaskItemId, taskId = Model.TaskId }, null)
+                      </div>
+                      <div class="col-md-1 col-xs-8"> 
+                        @if(@item.Status == false)
+                        {
+                          <a href="@Url.Action("CheckTaskItem", "TaskItem", new { taskItemId = item.TaskItemId, taskId = Model.TaskId })" role="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-remove"></i>Edit</a>
+                        }
+                        @if(@item.Status == true) 
+                        {
+                            <a href="@Url.Action("CheckTaskItem", "TaskItem", new { taskItemId = item.TaskItemId, taskId = Model.TaskId })" role="button" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i>Edit</a>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>

@@ -1,0 +1,26 @@
+﻿@model ASP.NET_Test.Models.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+		<div class="row-fluid">
+		  <div class="span12">
+            <div class="page-header">
+              <h3>Edit category:</h3>
+            </div>
+		    @using (Html.BeginForm("EditCategory", "Category", FormMethod.Post, new { @class = "form-signin" }))
+            {
+              @Html.AntiForgeryToken()
+              @Html.ValidationSummary(true)
+		      <div class="form-group">
+                @Html.TextBoxFor(model => model.CategoryId,  new { @class = "form-control",@required  = "required",@autocomplete = "off", @placeholder = "Category Id", @style="display:none;"})
+				@Html.TextBoxFor(model => model.CategoryName,  new { @class = "form-control",@required  = "required",@autocomplete = "off", @placeholder = "Your new category", @autofocus = "autofocus"})
+                @Html.ValidationMessageFor(model => model.CategoryName, String.Empty, new { @class = "text-danger" })	
+			  </div>
+		      <div class="form-actions">
+			    <button type="submit" class="btn pull-right btn-primary"> Save </button>
+			  </div>
+			}
+          </div>
+        </div>

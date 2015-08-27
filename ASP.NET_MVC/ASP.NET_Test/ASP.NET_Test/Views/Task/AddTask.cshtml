@@ -1,0 +1,27 @@
+﻿@model ASP.NET_Test.ViewModels.CategoryTaskViewModel
+
+@{
+    ViewBag.Title = "AddTask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+		<div class="row-fluid">
+	      <div class="span12">
+            <div class="page-header">
+              <h3>Add task:</h3>
+            </div>
+		    @using (Html.BeginForm("AddTask", "Task", FormMethod.Post, new { @class = "form-signin" }))
+            {
+              @Html.AntiForgeryToken()
+              @Html.ValidationSummary(true)
+			  <div class="form-group">
+                @Html.TextBoxFor(model => model.CategoryId,  new { @class = "form-control",@required  = "required",@autocomplete = "off", @placeholder = "Your new task", @style="display:none;"})
+				@Html.TextBoxFor(model => model.Task.TaskName,  new { @class = "form-control",@required  = "required",@autocomplete = "off", @placeholder = "Your new task", @autofocus = "autofocus"})
+                @Html.ValidationMessageFor(model => model.Task.TaskName, String.Empty, new { @class = "text-danger" })	
+			  </div>
+			  <div class="form-actions">
+			    <button type="submit" class="btn pull-right btn-primary"> Save </button>
+			  </div>
+			}
+          </div>
+        </div>
+

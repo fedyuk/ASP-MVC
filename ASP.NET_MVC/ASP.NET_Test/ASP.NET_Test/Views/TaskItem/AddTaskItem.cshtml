@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "AddTaskItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ASP.NET_Test.ViewModels.TaskTaskItemViewModel
+		<div class="row-fluid">
+	      <div class="span12">
+            <div class="page-header">
+              <h3>Add task item:</h3>
+            </div>
+		    @using (Html.BeginForm("AddTaskItem", "TaskItem", FormMethod.Post, new { @class = "form-signin" }))
+            {
+              @Html.AntiForgeryToken()
+              @Html.ValidationSummary(true)
+			  <div class="form-group">
+                @Html.TextBoxFor(model => model.TaskId,  new { @class = "form-control",@required  = "required",@autocomplete = "off", @placeholder = "Your new task item", @style="display:none;"})
+				@Html.TextBoxFor(model => model.Task.TaskItemName,  new { @class = "form-control",@required  = "required",@autocomplete = "off", @placeholder = "Your new task item", @autofocus = "autofocus"})
+                @Html.ValidationMessageFor(model => model.Task.TaskItemName, String.Empty, new { @class = "text-danger" })	
+			  </div>
+			  <div class="form-actions">
+			    <button type="submit" class="btn pull-right btn-primary"> Save </button>
+			    </div>
+			}
+          </div>
+        </div>
+
+

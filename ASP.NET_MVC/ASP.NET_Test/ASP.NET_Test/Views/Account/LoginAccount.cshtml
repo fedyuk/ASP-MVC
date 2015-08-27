@@ -1,0 +1,38 @@
+﻿@model ASP.NET_Test.Models.Account
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link href="http://twbs.docs.org.ua/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://twbs.docs.org.ua/examples/signin/signin.css" rel="stylesheet">
+    <script src="http://twbs.docs.org.ua/assets/js/ie-emulation-modes-warning.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      @using (Html.BeginForm("LoginAccount", "Account", FormMethod.Post, new { @class = "form-signin" }))
+      {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <h2 class="form-signin-heading">Log in</h2>
+        @Html.LabelFor(model => model.Email,"Email", new { @class = "sr-only" })
+        @Html.TextBoxFor(model => model.Email,  new { @class = "form-control",@required  = "required",@autocomplete= "off",@autofocus  = "autofocus", @type="text",@placeholder ="Your email" })
+        @Html.ValidationMessageFor(model => model.Email, String.Empty, new { @class = "text-danger" })
+        @Html.LabelFor(a => a.Password,"Password", new { @class = "sr-only" })
+        @Html.TextBoxFor(model => model.Password,  new { @class = "form-control",@required  = "required",@autocomplete= "off",@autofocus  = "autofocus", @type="password", @placeholder ="Your password" })
+        @Html.ValidationMessageFor(model => model.Password, String.Empty, new { @class = "text-danger" })
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+      }
+    </div> 
+    <script src="http://twbs.docs.org.ua/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+﻿@model List<ASP.NET_Test.ViewModels.CategoryTaskCountViewModel>
+
+@{
+    ViewBag.Title = "ShowCategories";
+}
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+		    <div class="row-fluid">
+			  <div class="span12">
+                <div class="page-header">
+                  <p class="col-md-offset-11 col-xs-offset-8">@Html.ActionLink("Add category", "AddCategory", "Category", null)</p>
+                  <h3>My categories:</h3>
+                  </div>
+                  <div class="list-group">
+                  @for (int i = 0; i < Model.Count;i++ ) 
+                    {
+                      @Html.Partial("~/Views/Category/_CategoryTaskCount.cshtml", Model[i]);
+                    }
+                    </div>
+                  </div>
+                </div>

@@ -1,0 +1,16 @@
+﻿@model ASP.NET_Test.ViewModels.CategoryTaskCountViewModel
+                    <div class="list-group-item row-md-offset-5">
+                      <h4 class="list-group-item-text">@Model.Category.CategoryName</h4>
+                      <p class="list-group-item-heading"><span class="badge">@Model.Count tasks</span></p>
+                      <div class="dropdown"> 
+                        <button type="button" class="btn btn-success dropdown-toggle col-md-offset-11 col-xs-offset-8 btn-xs" data-toggle="dropdown"> Actions to
+                          <span class="caret"></span> 
+                        </button> 
+                        <ul class="dropdown-menu pull-right" role="menu"> 
+                          <li>@Html.ActionLink("Edit","EditCategory", "Category", new {categoryId = @Model.Category.CategoryId}, null)</li> 
+                          <li>@Html.ActionLink("Delete","DeleteCategory", "Category", new {categoryId = @Model.Category.CategoryId}, null)</li> 
+                          <li>@Html.ActionLink("View tasks","ShowTasks", "Task", new {categoryId = @Model.Category.CategoryId}, null)</li>
+                        </ul>
+                      </div>
+                    </div>
+
